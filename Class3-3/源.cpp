@@ -13,10 +13,12 @@ void threshod_Mat(int th, void* data)
 int main()
 {
 	Mat srcMat;
+	Mat bigSrcMat;
 	Mat gryMat;
 	int lowTh = 30;
 	int maxTh = 255;
-	srcMat = imread("D:\\a\\a.jpg");
+	bigSrcMat = imread("D:\\a\\a.jpg");
+	resize(bigSrcMat, srcMat, Size(bigSrcMat.cols / 4, bigSrcMat.rows / 4));
 	if (!srcMat.data)
 	{
 		cout << "Ê§°Ü" << endl;
